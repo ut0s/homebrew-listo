@@ -3,7 +3,7 @@ class Listo < Formula
   homepage "https://github.com/ut0s/homebrew-listo"
   url "https://github.com/ut0s/homebrew-listo/releases/download/v0.2.0/listo-v0.2.0.tar.gz"
   sha256 "5bf476440d7e9b2c460ee2d239c1becee633931bbbbfe5a267a3efe2e27cb420"
-  license "MIT"
+  license :cannot_represent
 
   depends_on "node"
   depends_on "pnpm" => :build
