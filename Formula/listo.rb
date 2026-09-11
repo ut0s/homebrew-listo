@@ -1,9 +1,9 @@
 class Listo < Formula
   desc "Local todo.txt web UI, REST API, and MCP server"
   homepage "https://github.com/ut0s/homebrew-listo"
-  url "https://github.com/ut0s/homebrew-listo/releases/download/v0.2.20/listo-v0.2.20.tar.gz"
-  version "0.2.20"
-  sha256 "c48b61eee2373c5250f0493a126fc7148d43e665c67fa56cc1420fb697ee7433"
+  url "https://github.com/ut0s/homebrew-listo/releases/download/v0.2.21/listo-v0.2.21.tar.gz"
+  version "0.2.21"
+  sha256 "3fcc8cf94c8e2326419d16536a6a291a5ead66cecebf9cd3555bf7897b61f218"
   license :cannot_represent
 
   depends_on "node"
