@@ -1,9 +1,9 @@
 class Listo < Formula
   desc "Local todo.txt web UI, REST API, and MCP server"
   homepage "https://github.com/ut0s/homebrew-listo"
-  url "https://github.com/ut0s/homebrew-listo/releases/download/v0.2.40/listo-v0.2.40.tar.gz"
-  version "0.2.40"
-  sha256 "4c1bf1a3c42b3e327e84cc76c33789cc8700103a6b97f86fe38785a61904d20d"
+  url "https://github.com/ut0s/homebrew-listo/releases/download/v0.2.41/listo-v0.2.41.tar.gz"
+  version "0.2.41"
+  sha256 "7efeb781b17d8b102f52cf939172b7db596e8c99328a49862b76069a8dc55ab3"
   license :cannot_represent
 
   depends_on "node"
@@ -15,6 +15,17 @@ class Listo < Formula
     libexec.install "dist", "node_modules", "package.json", "public"
     chmod 0555, libexec/"dist/cli.js"
     bin.install_symlink libexec/"dist/cli.js" => "listo"
+  end
+
+  service do
+    run [opt_bin/"listo"]
+    working_dir var/"listo"
+    environment_variables LISTO_NO_OPEN: "1",
+                          LISTO_PORT:     "3888",
+                          LISTO_CONFIG:   var/"listo/listo.config.json"
+    keep_alive true
+    log_path var/"log/listo.log"
+    error_log_path var/"log/listo.log"
   end
 
   test do
